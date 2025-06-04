@@ -1,0 +1,52 @@
+﻿@page
+@model CrudProductos.Pages.Productos.IndexModel
+@{
+
+	ViewData["Title"] = "Lista de Productos";
+}
+<h1>Lista de Productos</h1>
+
+<a class="btn btn-primary mb3" asp-asp-page="Crear">Agregar Nuevo Producto</a>
+
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th>ID</th>
+			<th>Precio</th>
+			<th>Stock</th>
+			<th>Fecha Creacion</th>
+			<th>Acciones</th>
+
+			<tbody>
+
+				@foreach(var producto in Model.productos){
+
+				<tr>
+					<td>@producto.Id</td>
+					<td>@producto.Nombre</td>
+					<td>@producto.Precio</td>
+					<td>@producto.Stock</td>
+					<td>@producto.FechaCreacion</td>
+					<td>
+						<a class="btn btn-secondary btn-sm" asp-page="Editar" asp-route-id="@producto.Id">Editar</a>
+					<a class="btn btn-danger btn-sm" asp-page="Borrar" asp-route-id="@producto.Id">Borrar</a>
+					<a class="btn btn-secondary btn-sm" asp-page="Detalle" asp-route-id="@producto.Id">Detalle</a>
+
+					</td>
+					</tr>
+				}
+			</tbody>
+
+
+		</tr>
+
+
+
+
+
+	</thead>
+
+
+
+
+</table>

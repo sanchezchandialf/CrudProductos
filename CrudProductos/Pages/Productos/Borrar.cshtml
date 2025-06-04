@@ -1,0 +1,26 @@
+﻿@page
+@model CrudProductos.Pages.Productos.BorrarModel
+@{
+}
+<h1>Borrar Producto</h1>
+<p>¿Estás seguro de que deseas eliminar el producto <strong>@Model.Producto.Nombre</strong>?</p>
+<div class="card">
+
+    <div class="card-body mb-3">
+        <div class ="card-body">
+
+            <h5 class="card-title">Nombre:@Model.Producto.Nombre </h5>
+            <p class="card-text">
+                <strong>Precio:</strong>@Model.Producto.Precio.ToString("C")<br />
+                <strong>Stock:</strong>@Model.Producto.Stock
+                <strong>Fecha de Creación:</strong>@Model.Producto.FechaCreacion.ToString("g")
+            </p>
+
+        </div>
+    </div>
+</div>
+<form method="POST">
+  @*   <input type="hidden" asp-for="Producto.Id" /> *@
+    <button type="submit" class="btn btn-danger">Borrar</button>
+    <a asp-page="Index" class="btn btn-secondary">Cancelar</a>
+</form>

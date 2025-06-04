@@ -1,0 +1,35 @@
+﻿@page
+@model CrudProductos.Pages.Productos.CrearModel
+@{
+    ViewData["Title"] = "Crear Producto";
+}
+<h1>Crear Nuevo Producto</h1>
+<form method="POST">
+    <div class="mb-3">
+            <label asp-for="Producto.Nombre" class="form-label"></label>
+            <input asp-for="Producto.Nombre" class="form-control" placeholder="Ingrese el nombre del producto"/>
+            <span asp-validation-for="Producto.Nombre" class="text-danger"></span>
+
+
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Producto.Precio" class="form-label"></label>
+        <input asp-for="Producto.Precio" class="form-control" placeholder="Ingrese el precio del producto" />
+        <span asp-validation-for="Producto.Precio" class="text-danger"></span>
+
+
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Producto.Stock" class="form-label"></label>
+        <input asp-for="Producto.Stock" class="form-control" placeholder="Ingrese el stock del producto" />
+        <span asp-validation-for="Producto.Stock" class="text-danger"></span>
+
+
+    </div>
+
+    <button type="submit" class="btn btn-success">Guardar</button>
+    <a asp-page="Index" class="btn btn-secondary">Volver atras</a>
+
+</form>

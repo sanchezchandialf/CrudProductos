@@ -1,0 +1,33 @@
+﻿@page
+@model CrudProductos.Pages.Productos.EditarModel
+@{
+    ViewData["Title"] = "Editar Producto";
+}
+<h1>Editar Producto</h1>
+
+
+
+<form method="POST">
+    @* Enviar Id como campo oculto *@
+    <input type="hidden" asp-for="Producto.Id" />
+    <div class="mb-3">
+        <label asp-for="Producto.Nombre" class="form-label"></label>
+        <input asp-for="Producto.Nombre" class="form-control" placeholder="Ingrese el nombre del producto" />
+        <span asp-validation-for="Producto.Nombre" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Producto.Precio" class="form-label"></label>
+        <input asp-for="Producto.Precio" class="form-control" placeholder="Ingrese el precio del producto" />
+        <span asp-validation-for="Producto.Precio" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Producto.Stock" class="form-label"></label>
+        <input asp-for="Producto.Stock" class="form-control" placeholder="Ingrese el stock del producto" />
+        <span asp-validation-for="Producto.Stock"  class="text-danger"></span>
+    </div>
+
+        <button type="submit" class="btn btn-success">Guardar Cambios</button>
+        <a asp-page="Index" class="btn btn-secondary">Volver atras</a>
+</form>
